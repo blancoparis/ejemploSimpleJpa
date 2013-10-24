@@ -42,7 +42,7 @@ public class PersistenciaJPAConfig {
 	public LocalContainerEntityManagerFactoryBean  entityManagerFactoryBean(){
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[]{"ejemplo.bom"});
+		em.setPackagesToScan(new String[]{"org.dbp.bom"});
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(propiedadesAdicionalesJpa());
