@@ -1,7 +1,10 @@
 package org.dbp.dao.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.dbp.bom.Prueba;
 import org.dbp.dao.PruebaDao;
@@ -25,6 +28,12 @@ public class PruebaDaoImpl  implements PruebaDao{
 	@Transactional
 	public void insertar(Prueba entidad){
 		entityManager.persist(entidad);
+	}
+	
+	@Transactional
+	public List<Prueba> obtenerTodas(){
+		Query query=entityManager.createQuery(" select e from Prueba e", Prueba.class);
+		return (List<Prueba>)query.getResultList();
 	}
 	
 }

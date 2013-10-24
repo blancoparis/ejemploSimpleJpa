@@ -1,5 +1,7 @@
 package org.dbp;
 
+import static org.junit.Assert.*;
+
 import org.dbp.bom.Prueba;
 import org.dbp.conf.ConfiguracionTest;
 import org.dbp.conf.PersistenciaJPAConfig;
@@ -23,7 +25,7 @@ public class BaseTest {
 		Prueba entidad =new Prueba();
 		entidad.setId(2L);
 		dao.insertar(entidad);
-		System.out.println("Prueba");
+		assertEquals(1,dao.obtenerTodas().size());
 	}
 	
 }
